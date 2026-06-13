@@ -1,8 +1,10 @@
-import Sidebar from './components/Sidebar/Sidebar'
+import MainLayout from './components/MainLayout/MainLayout'
 
 function App() {
   return (
-    <Sidebar />
+    <MainLayout>
+      <h1>Dashboard</h1>
+    </MainLayout>
   )
 }
 

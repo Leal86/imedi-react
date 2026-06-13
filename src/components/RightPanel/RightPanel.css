@@ -1,0 +1,42 @@
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.right-panel__card {
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-card);
+}
+
+.right-panel__card h3 {
+  margin-bottom: 16px;
+}
+
+.right-panel__name {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.right-panel__role {
+  color: var(--color-text-muted);
+}
+
+.right-panel__button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  color: var(--color-white);
+  font-family: var(--font-main);
+  font-weight: 600;
+  cursor: pointer;
+}
