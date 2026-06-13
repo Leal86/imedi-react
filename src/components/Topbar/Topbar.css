@@ -44,27 +44,31 @@
   gap: 14px;
 }
 
-.topbar__notification {
-  font-size: 20px;
-}
-
-.topbar__avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #dbeafe;
-  color: var(--color-primary-dark);
-  font-weight: 700;
-}
-
 .topbar__user strong {
   font-size: 14px;
 }
 
 .topbar__user p {
   font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.topbar__notification {
+  font-size: 26px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.topbar__notification:hover {
+  color: var(--color-primary);
+}
+
+.topbar__profile-icon {
+  font-size: 42px;
+  color: var(--color-primary);
+}
+
+.topbar__search-icon {
+  font-size: 20px;
   color: var(--color-text-muted);
 }

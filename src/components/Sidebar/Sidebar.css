@@ -41,6 +41,9 @@
 }
 
 .sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 14px 16px;
   border-radius: var(--radius-lg);
   color: var(--color-white);
@@ -54,4 +57,9 @@
 .sidebar__link:hover {
   background-color: rgba(255, 255, 255, 0.18);
   opacity: 1;
+}
+
+.sidebar__link svg {
+  font-size: 22px;
+  flex-shrink: 0;
 }

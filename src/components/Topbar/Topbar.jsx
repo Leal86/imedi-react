@@ -1,10 +1,15 @@
 import './Topbar.css'
 
+import { IoSearchOutline } from 'react-icons/io5'
+import { IoNotificationsOutline } from 'react-icons/io5'
+import { FaUserCircle } from 'react-icons/fa'
+
 function Topbar() {
   return (
     <header className="topbar">
       <div className="topbar__search">
-        <span className="topbar__search-icon">🔎</span>
+        <IoSearchOutline className="topbar__search-icon" />
+
         <input
           className="topbar__input"
           type="text"
@@ -13,11 +18,9 @@ function Topbar() {
       </div>
 
       <div className="topbar__user">
-        <span className="topbar__notification">🔔</span>
+        <IoNotificationsOutline className="topbar__notification" />
 
-        <div className="topbar__avatar">
-          AM
-        </div>
+        <FaUserCircle className="topbar__profile-icon" />
 
         <div>
           <strong>Atendente iMedi</strong>
