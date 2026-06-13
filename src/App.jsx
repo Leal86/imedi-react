@@ -1,9 +1,10 @@
 import MainLayout from './components/MainLayout/MainLayout'
+import Dashboard from './pages/Dashboard/Dashboard'
 
 function App() {
   return (
     <MainLayout>
-      <h1>Dashboard</h1>
+      <Dashboard />
     </MainLayout>
   )
 }
