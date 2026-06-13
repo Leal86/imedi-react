@@ -1,6 +1,8 @@
+import Sidebar from './components/Sidebar/Sidebar'
+
 function App() {
   return (
-    <h1>iMedi</h1>
+    <Sidebar />
   )
 }
 

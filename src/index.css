@@ -1,3 +1,25 @@
+:root {
+  --color-primary: #3b82f6;
+  --color-primary-dark: #1e40af;
+  --color-background: #f8fafc;
+  --color-white: #ffffff;
+
+  --color-text: #1f2937;
+  --color-text-muted: #6b7280;
+
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  --font-main: Arial, sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +27,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f6f9fc;
-  color: #1f2937;
+  font-family: var(--font-main);
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
