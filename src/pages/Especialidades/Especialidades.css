@@ -1,0 +1,45 @@
+.especialidades {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.especialidades__header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.especialidades__header p {
+  color: var(--color-text-muted);
+}
+
+.especialidades__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 1200px) {
+  .especialidades__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+  .especialidades__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .especialidades__header h1 {
+    font-size: 28px;
+  }
+}

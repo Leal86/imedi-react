@@ -202,6 +202,7 @@ Visualização de histórico clínico.
 3. Adiciona biblioteca React Icons
 4. Melhora identidade visual com React Icons
 5. Ajusta layout e refinamento visual do dashboard
+6. Documenta contexto atual do projeto iMedi
 
 
 ## Status Atual
