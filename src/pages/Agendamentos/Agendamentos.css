@@ -168,11 +168,9 @@
   border: none;
   border-radius: var(--radius-md);
 
-  background: linear-gradient(
-    90deg,
-    var(--color-primary),
-    var(--color-primary-dark)
-  );
+  background: linear-gradient(90deg,
+      var(--color-primary),
+      var(--color-primary-dark));
 
   color: var(--color-white);
   font-family: var(--font-main);
@@ -207,5 +205,29 @@
 
   .agendamentos__success-actions button {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .agendamentos__card {
+    padding: 16px;
+  }
+
+  .agendamentos__empty {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .agendamentos__empty p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .agendamentos__empty span {
+    font-size: 14px;
+    line-height: 1.6;
   }
 }
