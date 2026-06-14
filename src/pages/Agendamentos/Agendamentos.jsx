@@ -1,6 +1,6 @@
 import './Agendamentos.css'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 function Agendamentos() {
@@ -18,6 +18,20 @@ function Agendamentos() {
   })
 
   const [mensagemSucesso, setMensagemSucesso] = useState('')
+
+  useEffect(() => {
+    if (!mensagemSucesso) {
+      return
+    }
+
+    const timer = setTimeout(() => {
+      setMensagemSucesso('')
+    }, 3000)
+
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [mensagemSucesso])
 
   function handleChange(event) {
     const { name, value } = event.target
