@@ -133,6 +133,20 @@ Recursos utilizados:
 * useNavigate
 * Navegação para Agendamentos levando a especialidade selecionada
 
+## Tooltip
+
+Componente reutilizável para exibição de ajuda contextual.
+
+Recebe via props:
+
+* texto
+
+Recursos utilizados:
+
+* Exibição ao passar o mouse
+* Reutilizável em qualquer formulário
+* Ajuda contextual ao usuário
+
 ---
 
 # Páginas Criadas
@@ -394,14 +408,15 @@ Concluído:
 * Página 404 para rotas inexistentes
 * Hook useEffect implementado
 * Feedback de sucesso removido automaticamente após 3 segundos
+* Componente Tooltip reutilizável
+* Tooltip de ajuda contextual implementado
 
 Próxima etapa:
 
-* Criar tooltip ou ajuda contextual
 * Finalizar responsividade completa
 * Preparar README final
 * Preparar vídeo de apresentação
-
+* Revisão final do MVP
 ---
 
 # Histórico de Commits
@@ -418,6 +433,8 @@ Próxima etapa:
 10. Atualiza documentação do contexto do projeto
 11. Cria pagina 404 para rotas inexistentes
 12. Adiciona useEffect ao feedback de agendamento
+13. Atualiza documentacao do contexto do projeto
+14. Adiciona tooltip de ajuda no formulario
 
 Observação:
 O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do commit 8 no Git. Nos próximos commits, commits funcionais e commits de documentação devem ter mensagens diferentes.
@@ -428,7 +445,7 @@ O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do 
 
 Percentual estimado de implementação:
 
-85%
+90%
 
 Requisitos já atendidos:
 
@@ -448,9 +465,8 @@ Requisitos já atendidos:
 
 Requisitos pendentes:
 
-* Feedback visual avançado
-* Tooltip
 * README final
-* GitHub público
 * Responsividade completa
+* GitHub público
 * Vídeo de apresentação
+* Revisão final do MVP
