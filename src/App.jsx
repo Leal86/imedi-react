@@ -4,6 +4,7 @@ import MainLayout from './components/MainLayout/MainLayout'
 
 import Dashboard from './pages/Dashboard/Dashboard'
 import Especialidades from './pages/Especialidades/Especialidades'
+import EspecialidadeDetalhes from './pages/EspecialidadeDetalhes/EspecialidadeDetalhes'
 import Agendamentos from './pages/Agendamentos/Agendamentos'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/especialidades" element={<Especialidades />} />
+        <Route path="/especialidades/:id" element={<EspecialidadeDetalhes />} />
         <Route path="/agendamentos" element={<Agendamentos />} />
       </Routes>
     </MainLayout>

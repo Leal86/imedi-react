@@ -1,0 +1,76 @@
+.especialidade-detalhes {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.especialidade-detalhes__card {
+  max-width: 720px;
+
+  padding: 28px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  background-color: var(--color-white);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-card);
+}
+
+.especialidade-detalhes__label {
+  width: fit-content;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background-color: #dbeafe;
+
+  color: var(--color-primary-dark);
+
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.especialidade-detalhes__card h1 {
+  font-size: 32px;
+  color: var(--color-text);
+}
+
+.especialidade-detalhes__card p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.especialidade-detalhes__card strong {
+  font-size: 20px;
+  color: var(--color-primary-dark);
+}
+
+.especialidade-detalhes__card button {
+  width: fit-content;
+
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+
+  color: var(--color-white);
+  font-family: var(--font-main);
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.especialidade-detalhes__card button:hover {
+  opacity: 0.92;
+}

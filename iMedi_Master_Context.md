@@ -13,8 +13,7 @@ Público-alvo MVP:
 Recepcionistas e atendentes da clínica.
 
 Observação:
-O sistema não será inicialmente utilizado pelos pacientes.
-Funcionalidades voltadas ao paciente serão consideradas melhorias futuras.
+O sistema não será inicialmente utilizado pelos pacientes. Funcionalidades voltadas ao paciente serão consideradas melhorias futuras.
 
 ---
 
@@ -25,6 +24,7 @@ Funcionalidades voltadas ao paciente serão consideradas melhorias futuras.
 * JavaScript
 * CSS3
 * React Icons
+* React Router DOM
 
 ---
 
@@ -71,8 +71,6 @@ Contém:
 * Área de Conteúdo
 * RightPanel
 
----
-
 ## Sidebar
 
 Menu lateral principal.
@@ -83,11 +81,11 @@ Itens:
 * Especialidades
 * Agendamentos
 
-Biblioteca de ícones:
+Recursos utilizados:
 
 * React Icons
-
----
+* NavLink do React Router DOM
+* Destaque automático da rota ativa
 
 ## Topbar
 
@@ -96,8 +94,6 @@ Contém:
 * Campo de pesquisa
 * Notificações
 * Usuário logado
-
----
 
 ## RightPanel
 
@@ -109,8 +105,6 @@ Exibe:
 * Resumo
 * Ações rápidas
 
----
-
 ## Card
 
 Componente reutilizável.
@@ -120,6 +114,24 @@ Utiliza children.
 Objetivo:
 
 Padronizar cartões da aplicação.
+
+## EspecialidadeCard
+
+Componente reutilizável para exibir especialidades médicas.
+
+Recebe via props:
+
+* id
+* nome
+* descricao
+* valor
+* icone
+
+Recursos utilizados:
+
+* React Icons
+* useNavigate
+* Navegação para Agendamentos levando a especialidade selecionada
 
 ---
 
@@ -133,6 +145,42 @@ Funcionalidades:
 * Resumo de pendências
 * Resumo de especialidades
 * Tabela de próximos agendamentos
+* Dados vindos de Mock Data
+
+## Especialidades
+
+Funcionalidades:
+
+* Listagem dinâmica das especialidades
+* Cards reutilizáveis
+* Grid responsivo
+* Ícones por especialidade
+* Botão Selecionar
+* Navegação para Agendamentos
+
+## EspecialidadeDetalhes
+
+Funcionalidades:
+
+* Rota dinâmica com parâmetro de URL
+* Uso de useParams
+* Busca da especialidade pelo ID
+* Exibição de detalhes da especialidade
+* Botão Agendar Consulta
+* Navegação para Agendamentos levando a especialidade selecionada
+
+## Agendamentos
+
+Status atual:
+
+* Página criada
+* Recebe especialidade selecionada via useLocation
+* Exibe nome e valor da especialidade
+* Exibe mensagem condicional quando nenhuma especialidade foi selecionada
+
+Próxima implementação:
+
+* Transformar a página em um formulário real de agendamento
 
 ---
 
@@ -154,128 +202,144 @@ Simular retorno de API utilizando Mock Data.
 
 ---
 
+# Hooks Implementados
+
+## useNavigate
+
+Utilizado para redirecionar o usuário entre páginas.
+
+Exemplos:
+
+* EspecialidadeCard → Agendamentos
+* EspecialidadeDetalhes → Agendamentos
+
+## useLocation
+
+Utilizado para receber dados enviados durante a navegação.
+
+Exemplo:
+
+* Agendamentos recebe a especialidade selecionada
+
+## useParams
+
+Utilizado para capturar parâmetros da URL.
+
+Exemplo:
+
+* /especialidades/:id
+
+---
+
 # Melhorias Futuras e Evoluções do Produto
 
 ## Dashboard
 
-- Adicionar gráficos de consultas por período.
-- Adicionar indicadores visuais de crescimento.
-- Adicionar filtro por data.
-- Criar área de relatórios administrativos.
-- Adicionar métricas de faturamento.
-- Adicionar exportação PDF e Excel.
+* Adicionar gráficos de consultas por período.
+* Adicionar indicadores visuais de crescimento.
+* Adicionar filtro por data.
+* Criar área de relatórios administrativos.
+* Adicionar métricas de faturamento.
+* Adicionar exportação PDF e Excel.
 
 ---
 
 ## Especialidades
 
-- Permitir clique em todo o card.
-- Adicionar badge de duração da consulta.
-- Adicionar badge de disponibilidade.
-- Adicionar quantidade de médicos por especialidade.
-- Adicionar imagem ou ilustração da especialidade.
-- Implementar pesquisa funcional.
-- Implementar filtros por categoria.
-- Ordenação por valor.
-- Ordenação por disponibilidade.
+* Permitir clique em todo o card.
+* Adicionar badge de duração da consulta.
+* Adicionar badge de disponibilidade.
+* Adicionar quantidade de médicos por especialidade.
+* Adicionar imagem ou ilustração da especialidade.
+* Implementar pesquisa funcional.
+* Implementar filtros por categoria.
+* Ordenação por valor.
+* Ordenação por disponibilidade.
 
 ---
 
 ## Agendamentos
 
-- Calendário visual.
-- Seleção de horários em tempo real.
-- Validação de conflitos de agenda.
-- Reagendamento de consultas.
-- Cancelamento de consultas.
-- Histórico de consultas do paciente.
-- Lista de espera.
+* Calendário visual.
+* Seleção de horários em tempo real.
+* Validação de conflitos de agenda.
+* Reagendamento de consultas.
+* Cancelamento de consultas.
+* Histórico de consultas do paciente.
+* Lista de espera.
 
 ---
 
 ## Pacientes
 
-- Cadastro completo.
-- Histórico médico.
-- Informações de contato.
-- Pesquisa avançada.
-- Documentos anexados.
+* Cadastro completo.
+* Histórico médico.
+* Informações de contato.
+* Pesquisa avançada.
+* Documentos anexados.
 
 ---
 
 ## Médicos
 
-- Cadastro de médicos.
-- Agenda individual.
-- Especialidades vinculadas.
-- Controle de disponibilidade.
-- Perfil profissional.
+* Cadastro de médicos.
+* Agenda individual.
+* Especialidades vinculadas.
+* Controle de disponibilidade.
+* Perfil profissional.
 
 ---
 
 ## Sistema
 
-- Dark Mode.
-- Internacionalização (PT/EN).
-- Notificações reais.
-- Controle de permissões.
-- Login e autenticação.
-- Recuperação de senha.
-- Auditoria de ações.
-- Logs do sistema.
+* Dark Mode.
+* Internacionalização PT/EN.
+* Notificações reais.
+* Controle de permissões.
+* Login e autenticação.
+* Recuperação de senha.
+* Auditoria de ações.
+* Logs do sistema.
 
 ---
 
 ## UX/UI
 
-- Melhorar animações.
-- Skeleton Loading.
-- Feedback visual de carregamento.
-- Modais padronizados.
-- Sistema de Toasts.
-- Responsividade para tablet.
-- Responsividade para mobile.
-- Acessibilidade WCAG.
+* Melhorar animações.
+* Skeleton Loading.
+* Feedback visual de carregamento.
+* Modais padronizados.
+* Sistema de Toasts.
+* Responsividade para tablet.
+* Responsividade para mobile.
+* Acessibilidade WCAG.
 
 ---
 
 ## Integrações Futuras
 
-- Integração com backend Spring Boot.
-- Integração com API REST.
-- Banco PostgreSQL.
-- Integração com pagamentos.
-- Integração com WhatsApp.
-- Integração com Email.
-- Integração com Google Calendar.
+* Integração com backend Spring Boot.
+* Integração com API REST.
+* Banco PostgreSQL.
+* Integração com pagamentos.
+* Integração com WhatsApp.
+* Integração com Email.
+* Integração com Google Calendar.
 
 ---
 
-## MVP Sprint 2 (Fora do Escopo Atual)
+## MVP Sprint 2 - Fora do Escopo Atual
 
-- Telemedicina.
-- Videochamada.
-- Prontuário eletrônico.
-- Assinatura digital.
-- Receituário eletrônico.
-
----
-
-## Relatórios
-
-Painel administrativo com métricas da clínica.
-
----
-
-## Mensagens
-
-Comunicação entre clínica e pacientes.
-
----
-
-## Prontuário Eletrônico
-
-Visualização de histórico clínico.
+* Telemedicina.
+* Videochamada.
+* Prontuário eletrônico.
+* Assinatura digital.
+* Receituário eletrônico.
+* Área completa do paciente.
+* Área completa de médicos.
+* Mensagens.
+* Prontuário eletrônico.
+* Relatórios administrativos avançados.
 
 ---
 
@@ -287,36 +351,46 @@ Visualização de histórico clínico.
 * Não avançar sem validação do usuário
 * Commits obrigatórios
 * Documentação contínua
+* Sempre atualizar este arquivo após commits relevantes
+* Sempre informar título correto do commit
 
 ---
 
-## Status Atual
+# Status Atual
 
 Concluído:
 
-- Estrutura React + Vite
-- Sidebar
-- Topbar
-- RightPanel
-- Card reutilizável
-- Dashboard
-- Página Especialidades
-- Página Agendamentos inicial
-- React Icons
-- React Router
-- Dados simulados
-- Grid de especialidades com cards dinâmicos
-- Navegação entre páginas
-- Fluxo Especialidades → Agendamentos
-- Hook useNavigate implementado
-- Hook useLocation implementado
-- Mensagens condicionais na página Agendamentos
+* Estrutura React + Vite
+* Sidebar
+* Topbar
+* RightPanel
+* Card reutilizável
+* EspecialidadeCard reutilizável
+* Dashboard
+* Página Especialidades
+* Página EspecialidadeDetalhes
+* Página Agendamentos inicial
+* React Icons
+* React Router DOM
+* Dados simulados
+* Grid de especialidades com cards dinâmicos
+* Navegação entre páginas
+* Fluxo Especialidades → Agendamentos
+* Fluxo Especialidades → Detalhes → Agendamentos
+* Hook useNavigate implementado
+* Hook useLocation implementado
+* Hook useParams implementado
+* Mensagens condicionais na página Agendamentos
 
 Próxima etapa:
 
-- Implementar useParams
-- Criar página de detalhes da especialidade
-- Adicionar rota 404
+* Transformar a página Agendamentos em um formulário real
+* Implementar useState no formulário
+* Criar feedback visual de sucesso
+* Preparar dados simulados para novos agendamentos
+* Depois implementar rota 404
+
+---
 
 # Histórico de Commits
 
@@ -328,6 +402,10 @@ Próxima etapa:
 6. Documenta contexto atual do projeto iMedi
 7. Cria pagina de especialidades com cards dinamicos
 8. Conecta especialidades ao fluxo de agendamento
+9. Atualiza documentacao do projeto iMedi
+
+Observação:
+O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do commit 8 no Git. Nos próximos commits, commits funcionais e commits de documentação devem ter mensagens diferentes.
 
 ---
 
@@ -335,25 +413,32 @@ Próxima etapa:
 
 Percentual estimado de implementação:
 
-65%
+70%
 
 Requisitos já atendidos:
 
-- Componentização
-- React Router
-- Props
-- Navegação entre páginas
-- Estrutura organizada
-- Dados simulados (JSON)
-- Componentes reutilizáveis
+* Componentização
+* Reutilização de mais de 4 componentes
+* React Router
+* Props
+* useNavigate
+* useLocation
+* useParams
+* Navegação entre páginas
+* Estrutura organizada
+* Dados simulados
+* Componentes reutilizáveis
+* Layout visual diferenciado
+* Mensagens condicionais
 
 Requisitos pendentes:
 
-- useParams
-- Página 404
-- useState
-- useEffect
-- Feedback visual avançado
-- Tooltip
-- README final
-- Responsividade completa
+* useState
+* useEffect
+* Página 404
+* Feedback visual avançado
+* Tooltip
+* README final
+* GitHub público
+* Responsividade completa
+* Vídeo de apresentação
