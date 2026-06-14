@@ -258,6 +258,8 @@ Exemplo:
 * Criar área de relatórios administrativos.
 * Adicionar métricas de faturamento.
 * Adicionar exportação PDF e Excel.
+* Cards com atualização em tempo real.
+* Integração com indicadores do backend.
 
 ---
 
@@ -284,6 +286,8 @@ Exemplo:
 * Cancelamento de consultas.
 * Histórico de consultas do paciente.
 * Lista de espera.
+* Máscara automática para telefone.
+* Integração com agenda médica em tempo real.
 
 ---
 
@@ -334,6 +338,8 @@ Exemplo:
 * Exibição apenas de ícones na navegação lateral em telas médias.
 * Menu hambúrguer para dispositivos móveis.
 * Melhor aproveitamento da área útil de conteúdo em resoluções menores.
+* Pesquisa responsiva com truncamento automático do placeholder.
+* Ocultação inteligente de elementos secundários em telas pequenas.
 
 ---
 
@@ -414,13 +420,23 @@ Concluído:
 * Feedback de sucesso removido automaticamente após 3 segundos
 * Componente Tooltip reutilizável
 * Tooltip de ajuda contextual implementado
+* Responsividade Desktop
+* Responsividade Tablet
+* Responsividade Mobile 425px
+* Responsividade Mobile 375px
+* Sidebar compacta para mobile
+* Topbar responsiva
+* Dashboard responsivo
+* Especialidades responsiva
+* Agendamentos responsiva
+* Testes manuais de responsividade concluídos
 
 Próxima etapa:
 
-* Finalizar responsividade completa
 * Preparar README final
-* Preparar vídeo de apresentação
 * Revisão final do MVP
+* Preparar vídeo de apresentação
+* Publicação do projeto no GitHub
 ---
 
 # Histórico de Commits
@@ -439,6 +455,9 @@ Próxima etapa:
 12. Adiciona useEffect ao feedback de agendamento
 13. Atualiza documentacao do contexto do projeto
 14. Adiciona tooltip de ajuda no formulario
+15. Ajusta documentacao do contexto do projeto
+16. Ajusta responsividade do dashboard em 425px
+17. Finaliza responsividade mobile do MVP
 
 Observação:
 O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do commit 8 no Git. Nos próximos commits, commits funcionais e commits de documentação devem ter mensagens diferentes.
@@ -449,7 +468,7 @@ O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do 
 
 Percentual estimado de implementação:
 
-90%
+95%
 
 Requisitos já atendidos:
 
@@ -466,11 +485,16 @@ Requisitos já atendidos:
 * Componentes reutilizáveis
 * Layout visual diferenciado
 * Mensagens condicionais
+* useState
+* useEffect
+* Página 404
+* Tooltip de ajuda contextual
+* Feedback visual de sucesso
+* Responsividade desktop, tablet e mobile
 
 Requisitos pendentes:
 
 * README final
-* Responsividade completa
 * GitHub público
 * Vídeo de apresentação
 * Revisão final do MVP
