@@ -392,10 +392,11 @@ Concluído:
 * Limpeza automática do formulário após envio
 * Ações pós-confirmação do agendamento
 * Página 404 para rotas inexistentes
+* Hook useEffect implementado
+* Feedback de sucesso removido automaticamente após 3 segundos
 
 Próxima etapa:
 
-* Implementar useEffect
 * Criar tooltip ou ajuda contextual
 * Finalizar responsividade completa
 * Preparar README final
@@ -416,6 +417,7 @@ Próxima etapa:
 9. Atualiza documentacao do projeto iMedi
 10. Atualiza documentação do contexto do projeto
 11. Cria pagina 404 para rotas inexistentes
+12. Adiciona useEffect ao feedback de agendamento
 
 Observação:
 O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do commit 8 no Git. Nos próximos commits, commits funcionais e commits de documentação devem ter mensagens diferentes.
@@ -426,7 +428,7 @@ O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do 
 
 Percentual estimado de implementação:
 
-80%
+85%
 
 Requisitos já atendidos:
 
@@ -446,7 +448,6 @@ Requisitos já atendidos:
 
 Requisitos pendentes:
 
-* useEffect
 * Feedback visual avançado
 * Tooltip
 * README final
