@@ -330,6 +330,10 @@ Exemplo:
 * Responsividade para tablet.
 * Responsividade para mobile.
 * Acessibilidade WCAG.
+* Sidebar recolhível (Collapsed Sidebar) para tablets.
+* Exibição apenas de ícones na navegação lateral em telas médias.
+* Menu hambúrguer para dispositivos móveis.
+* Melhor aproveitamento da área útil de conteúdo em resoluções menores.
 
 ---
 

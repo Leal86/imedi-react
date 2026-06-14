@@ -39,6 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   margin-bottom: 16px;
 }
 
@@ -80,4 +81,74 @@
 .dashboard__status--pending {
   background-color: #fef3c7;
   color: #92400e;
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 1024px) {
+  .dashboard__cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+  .dashboard__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__table-header {
+    align-items: flex-start;
+  }
+
+  .dashboard__table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* ==========================
+   Mobile pequeno
+========================== */
+
+@media (max-width: 480px) {
+  .dashboard__header h1 {
+    font-size: 28px;
+  }
+
+  .dashboard__cards {
+    gap: 14px;
+  }
+
+  .dashboard__cards > * {
+    text-align: center;
+  }
+
+  .dashboard__cards h3,
+  .dashboard__cards strong,
+  .dashboard__cards p {
+    text-align: center;
+  }
+
+  .dashboard__table-header h2 {
+    font-size: 24px;
+  }
+
+  .dashboard__table th,
+  .dashboard__table td {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+
+  .dashboard__status {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
 }
