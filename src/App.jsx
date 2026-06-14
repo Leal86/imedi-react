@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import Especialidades from './pages/Especialidades/Especialidades'
 import EspecialidadeDetalhes from './pages/EspecialidadeDetalhes/EspecialidadeDetalhes'
 import Agendamentos from './pages/Agendamentos/Agendamentos'
+import NotFound from './pages/NotFound/NotFound'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/especialidades" element={<Especialidades />} />
         <Route path="/especialidades/:id" element={<EspecialidadeDetalhes />} />
         <Route path="/agendamentos" element={<Agendamentos />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </MainLayout>
   )

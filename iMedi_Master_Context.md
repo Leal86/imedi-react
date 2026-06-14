@@ -424,7 +424,7 @@ O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do 
 
 Percentual estimado de implementação:
 
-70%
+75%
 
 Requisitos já atendidos:
 
