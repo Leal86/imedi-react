@@ -403,6 +403,7 @@ Próxima etapa:
 7. Cria pagina de especialidades com cards dinamicos
 8. Conecta especialidades ao fluxo de agendamento
 9. Atualiza documentacao do projeto iMedi
+10. Atualiza documentação do contexto do projeto
 
 Observação:
 O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do commit 8 no Git. Nos próximos commits, commits funcionais e commits de documentação devem ter mensagens diferentes.

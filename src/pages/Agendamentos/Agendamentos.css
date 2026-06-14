@@ -15,11 +15,8 @@
 
 .agendamentos__card {
   padding: 24px;
-
   background-color: var(--color-white);
-
   border-radius: var(--radius-lg);
-
   box-shadow: var(--shadow-card);
 }
 
@@ -29,13 +26,13 @@
 
 .agendamentos__selected {
   padding: 20px;
+  margin-bottom: 24px;
 
   display: flex;
   flex-direction: column;
   gap: 8px;
 
   border-radius: var(--radius-md);
-
   background-color: #dbeafe;
 }
 
@@ -54,13 +51,13 @@
 
 .agendamentos__empty {
   padding: 20px;
+  margin-bottom: 24px;
 
   display: flex;
   flex-direction: column;
   gap: 8px;
 
   border-radius: var(--radius-md);
-
   background-color: #fef3c7;
 }
 
@@ -71,4 +68,138 @@
 
 .agendamentos__empty span {
   color: #92400e;
+}
+
+.agendamentos__success {
+  padding: 16px;
+  margin-bottom: 24px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  border-radius: var(--radius-md);
+
+  background-color: #dcfce7;
+  color: #166534;
+
+  font-weight: 600;
+}
+
+.agendamentos__success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.agendamentos__success-actions button {
+  padding: 10px 14px;
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  font-family: var(--font-main);
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.agendamentos__success-actions button:first-child {
+  background-color: var(--color-white);
+  color: #166534;
+}
+
+.agendamentos__success-actions button:last-child {
+  background-color: #166534;
+  color: var(--color-white);
+}
+
+.agendamentos__form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.agendamentos__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.agendamentos__field--full {
+  grid-column: 1 / -1;
+}
+
+.agendamentos__field label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.agendamentos__field input,
+.agendamentos__field textarea {
+  width: 100%;
+  padding: 12px 14px;
+
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-md);
+
+  font-family: var(--font-main);
+  font-size: 14px;
+
+  color: var(--color-text);
+  background-color: var(--color-white);
+}
+
+.agendamentos__field input:focus,
+.agendamentos__field textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.agendamentos__field input::placeholder,
+.agendamentos__field textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.agendamentos__button {
+  width: fit-content;
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+
+  color: var(--color-white);
+  font-family: var(--font-main);
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.agendamentos__button:hover,
+.agendamentos__success-actions button:hover {
+  opacity: 0.92;
+}
+
+@media (max-width: 768px) {
+  .agendamentos__form {
+    grid-template-columns: 1fr;
+  }
+
+  .agendamentos__button {
+    width: 100%;
+  }
+
+  .agendamentos__success-actions {
+    flex-direction: column;
+  }
+
+  .agendamentos__success-actions button {
+    width: 100%;
+  }
 }
