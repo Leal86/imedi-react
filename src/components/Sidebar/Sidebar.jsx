@@ -1,5 +1,7 @@
 import './Sidebar.css'
 
+import { NavLink } from 'react-router-dom'
+
 import { MdDashboard } from 'react-icons/md'
 import { FaUserDoctor } from 'react-icons/fa6'
 import { BsCalendar2Check } from 'react-icons/bs'
@@ -19,26 +21,41 @@ function Sidebar() {
       </div>
 
       <nav className="sidebar__nav">
-        <a
-          className="sidebar__link sidebar__link--active"
-          href="#"
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? 'sidebar__link sidebar__link--active'
+              : 'sidebar__link'
+          }
         >
           <MdDashboard />
-
           Dashboard
-        </a>
+        </NavLink>
 
-        <a className="sidebar__link" href="#">
+        <NavLink
+          to="/especialidades"
+          className={({ isActive }) =>
+            isActive
+              ? 'sidebar__link sidebar__link--active'
+              : 'sidebar__link'
+          }
+        >
           <FaUserDoctor />
-
           Especialidades
-        </a>
+        </NavLink>
 
-        <a className="sidebar__link" href="#">
+        <NavLink
+          to="/agendamentos"
+          className={({ isActive }) =>
+            isActive
+              ? 'sidebar__link sidebar__link--active'
+              : 'sidebar__link'
+          }
+        >
           <BsCalendar2Check />
-
           Agendamentos
-        </a>
+        </NavLink>
       </nav>
     </aside>
   )

@@ -19,6 +19,7 @@ function Especialidades() {
         {especialidades.map((especialidade) => (
           <EspecialidadeCard
             key={especialidade.id}
+            id={especialidade.id}
             nome={especialidade.nome}
             descricao={especialidade.descricao}
             valor={especialidade.valor}

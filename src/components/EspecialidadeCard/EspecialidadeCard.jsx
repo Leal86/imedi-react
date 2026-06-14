@@ -1,5 +1,7 @@
 import './EspecialidadeCard.css'
 
+import { useNavigate } from 'react-router-dom'
+
 import { FaHeartbeat, FaBaby, FaBone, FaBrain } from 'react-icons/fa'
 import { FaUserDoctor } from 'react-icons/fa6'
 import { MdOutlineHealthAndSafety } from 'react-icons/md'
@@ -13,7 +15,21 @@ const icones = {
   neurologia: <FaBrain />,
 }
 
-function EspecialidadeCard({ nome, descricao, valor, icone }) {
+function EspecialidadeCard({ id, nome, descricao, valor, icone }) {
+  const navigate = useNavigate()
+
+  function handleSelecionarEspecialidade() {
+    navigate('/agendamentos', {
+      state: {
+        especialidade: {
+          id,
+          nome,
+          valor,
+        },
+      },
+    })
+  }
+
   return (
     <article className="especialidade-card">
       <div className="especialidade-card__icon">
@@ -28,7 +44,10 @@ function EspecialidadeCard({ nome, descricao, valor, icone }) {
         € {valor}
       </span>
 
-      <button className="especialidade-card__button">
+      <button
+        className="especialidade-card__button"
+        onClick={handleSelecionarEspecialidade}
+      >
         Selecionar
       </button>
     </article>

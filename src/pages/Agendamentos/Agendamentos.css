@@ -1,0 +1,74 @@
+.agendamentos {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.agendamentos__header h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.agendamentos__header p {
+  color: var(--color-text-muted);
+}
+
+.agendamentos__card {
+  padding: 24px;
+
+  background-color: var(--color-white);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-card);
+}
+
+.agendamentos__card h2 {
+  margin-bottom: 20px;
+}
+
+.agendamentos__selected {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  border-radius: var(--radius-md);
+
+  background-color: #dbeafe;
+}
+
+.agendamentos__selected p {
+  color: var(--color-text-muted);
+}
+
+.agendamentos__selected strong {
+  font-size: 24px;
+  color: var(--color-primary-dark);
+}
+
+.agendamentos__selected span {
+  font-weight: 600;
+}
+
+.agendamentos__empty {
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  border-radius: var(--radius-md);
+
+  background-color: #fef3c7;
+}
+
+.agendamentos__empty p {
+  font-weight: 600;
+  color: #92400e;
+}
+
+.agendamentos__empty span {
+  color: #92400e;
+}

@@ -154,15 +154,110 @@ Simular retorno de API utilizando Mock Data.
 
 ---
 
-# Melhorias Futuras
+# Melhorias Futuras e Evoluções do Produto
 
-## Área do Paciente
+## Dashboard
 
-Permitir que pacientes:
+- Adicionar gráficos de consultas por período.
+- Adicionar indicadores visuais de crescimento.
+- Adicionar filtro por data.
+- Criar área de relatórios administrativos.
+- Adicionar métricas de faturamento.
+- Adicionar exportação PDF e Excel.
 
-* Consultem especialidades
-* Agendem consultas
-* Acompanhem agendamentos
+---
+
+## Especialidades
+
+- Permitir clique em todo o card.
+- Adicionar badge de duração da consulta.
+- Adicionar badge de disponibilidade.
+- Adicionar quantidade de médicos por especialidade.
+- Adicionar imagem ou ilustração da especialidade.
+- Implementar pesquisa funcional.
+- Implementar filtros por categoria.
+- Ordenação por valor.
+- Ordenação por disponibilidade.
+
+---
+
+## Agendamentos
+
+- Calendário visual.
+- Seleção de horários em tempo real.
+- Validação de conflitos de agenda.
+- Reagendamento de consultas.
+- Cancelamento de consultas.
+- Histórico de consultas do paciente.
+- Lista de espera.
+
+---
+
+## Pacientes
+
+- Cadastro completo.
+- Histórico médico.
+- Informações de contato.
+- Pesquisa avançada.
+- Documentos anexados.
+
+---
+
+## Médicos
+
+- Cadastro de médicos.
+- Agenda individual.
+- Especialidades vinculadas.
+- Controle de disponibilidade.
+- Perfil profissional.
+
+---
+
+## Sistema
+
+- Dark Mode.
+- Internacionalização (PT/EN).
+- Notificações reais.
+- Controle de permissões.
+- Login e autenticação.
+- Recuperação de senha.
+- Auditoria de ações.
+- Logs do sistema.
+
+---
+
+## UX/UI
+
+- Melhorar animações.
+- Skeleton Loading.
+- Feedback visual de carregamento.
+- Modais padronizados.
+- Sistema de Toasts.
+- Responsividade para tablet.
+- Responsividade para mobile.
+- Acessibilidade WCAG.
+
+---
+
+## Integrações Futuras
+
+- Integração com backend Spring Boot.
+- Integração com API REST.
+- Banco PostgreSQL.
+- Integração com pagamentos.
+- Integração com WhatsApp.
+- Integração com Email.
+- Integração com Google Calendar.
+
+---
+
+## MVP Sprint 2 (Fora do Escopo Atual)
+
+- Telemedicina.
+- Videochamada.
+- Prontuário eletrônico.
+- Assinatura digital.
+- Receituário eletrônico.
 
 ---
 
@@ -195,16 +290,6 @@ Visualização de histórico clínico.
 
 ---
 
-# Histórico de Commits
-
-1. Inicializa projeto React com Vite
-2. Cria sidebar e variaveis globais de estilo
-3. Adiciona biblioteca React Icons
-4. Melhora identidade visual com React Icons
-5. Ajusta layout e refinamento visual do dashboard
-6. Documenta contexto atual do projeto iMedi
-
-
 ## Status Atual
 
 Concluído:
@@ -215,8 +300,26 @@ Concluído:
 - RightPanel
 - Card reutilizável
 - Dashboard
+- Página Especialidades
+- Página Agendamentos inicial
 - React Icons
+- React Router
 - Dados simulados
+- Grid de especialidades com cards dinâmicos
+
+Próxima etapa:
+
+- Conectar o botão Selecionar da página Especialidades à página Agendamentos, levando a especialidade escolhida.
+
+# Histórico de Commits
+
+1. Inicializa projeto React com Vite
+2. Cria sidebar e variaveis globais de estilo
+3. Adiciona biblioteca React Icons
+4. Melhora identidade visual com React Icons
+5. Ajusta layout e refinamento visual do dashboard
+6. Documenta contexto atual do projeto iMedi
+7. Cria pagina de especialidades com cards dinamicos
 
 Próxima etapa:
 
