@@ -171,16 +171,19 @@ Funcionalidades:
 
 ## Agendamentos
 
-Status atual:
+Funcionalidades:
 
-* Página criada
 * Recebe especialidade selecionada via useLocation
 * Exibe nome e valor da especialidade
 * Exibe mensagem condicional quando nenhuma especialidade foi selecionada
-
-Próxima implementação:
-
-* Transformar a página em um formulário real de agendamento
+* Formulário funcional de agendamento
+* Controle de formulário com useState
+* Validação simples de telefone
+* Limitação de 9 dígitos para telefone
+* Feedback visual de sucesso
+* Limpeza automática do formulário após confirmação
+* Botão para novo agendamento
+* Botão para retornar às especialidades
 
 ---
 
@@ -381,14 +384,21 @@ Concluído:
 * Hook useLocation implementado
 * Hook useParams implementado
 * Mensagens condicionais na página Agendamentos
+* Formulário de agendamento funcional
+* Hook useState implementado
+* Validação de telefone (apenas números)
+* Limite de 9 dígitos para telefone
+* Feedback visual de sucesso
+* Limpeza automática do formulário após envio
+* Ações pós-confirmação do agendamento
 
 Próxima etapa:
 
-* Transformar a página Agendamentos em um formulário real
-* Implementar useState no formulário
-* Criar feedback visual de sucesso
-* Preparar dados simulados para novos agendamentos
-* Depois implementar rota 404
+* Criar rota 404 para URLs inexistentes
+* Implementar useEffect
+* Criar tooltip ou ajuda contextual
+* Finalizar responsividade completa
+* Preparar README final
 
 ---
 
@@ -434,7 +444,6 @@ Requisitos já atendidos:
 
 Requisitos pendentes:
 
-* useState
 * useEffect
 * Página 404
 * Feedback visual avançado
