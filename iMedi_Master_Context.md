@@ -306,10 +306,17 @@ Concluído:
 - React Router
 - Dados simulados
 - Grid de especialidades com cards dinâmicos
+- Navegação entre páginas
+- Fluxo Especialidades → Agendamentos
+- Hook useNavigate implementado
+- Hook useLocation implementado
+- Mensagens condicionais na página Agendamentos
 
 Próxima etapa:
 
-- Conectar o botão Selecionar da página Especialidades à página Agendamentos, levando a especialidade escolhida.
+- Implementar useParams
+- Criar página de detalhes da especialidade
+- Adicionar rota 404
 
 # Histórico de Commits
 
@@ -320,7 +327,33 @@ Próxima etapa:
 5. Ajusta layout e refinamento visual do dashboard
 6. Documenta contexto atual do projeto iMedi
 7. Cria pagina de especialidades com cards dinamicos
+8. Conecta especialidades ao fluxo de agendamento
 
-Próxima etapa:
+---
 
-- Página Especialidades
+# Progresso do MVP
+
+Percentual estimado de implementação:
+
+65%
+
+Requisitos já atendidos:
+
+- Componentização
+- React Router
+- Props
+- Navegação entre páginas
+- Estrutura organizada
+- Dados simulados (JSON)
+- Componentes reutilizáveis
+
+Requisitos pendentes:
+
+- useParams
+- Página 404
+- useState
+- useEffect
+- Feedback visual avançado
+- Tooltip
+- README final
+- Responsividade completa
