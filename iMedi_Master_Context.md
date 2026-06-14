@@ -391,14 +391,15 @@ Concluído:
 * Feedback visual de sucesso
 * Limpeza automática do formulário após envio
 * Ações pós-confirmação do agendamento
+* Página 404 para rotas inexistentes
 
 Próxima etapa:
 
-* Criar rota 404 para URLs inexistentes
 * Implementar useEffect
 * Criar tooltip ou ajuda contextual
 * Finalizar responsividade completa
 * Preparar README final
+* Preparar vídeo de apresentação
 
 ---
 
@@ -414,6 +415,7 @@ Próxima etapa:
 8. Conecta especialidades ao fluxo de agendamento
 9. Atualiza documentacao do projeto iMedi
 10. Atualiza documentação do contexto do projeto
+11. Cria pagina 404 para rotas inexistentes
 
 Observação:
 O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do commit 8 no Git. Nos próximos commits, commits funcionais e commits de documentação devem ter mensagens diferentes.
@@ -424,7 +426,7 @@ O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do 
 
 Percentual estimado de implementação:
 
-75%
+80%
 
 Requisitos já atendidos:
 
@@ -445,7 +447,6 @@ Requisitos já atendidos:
 Requisitos pendentes:
 
 * useEffect
-* Página 404
 * Feedback visual avançado
 * Tooltip
 * README final
