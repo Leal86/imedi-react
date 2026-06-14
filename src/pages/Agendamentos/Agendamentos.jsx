@@ -3,6 +3,8 @@ import './Agendamentos.css'
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
+import Tooltip from '../../components/Tooltip/Tooltip'
+
 function Agendamentos() {
   const location = useLocation()
   const navigate = useNavigate()
@@ -161,7 +163,11 @@ function Agendamentos() {
           </div>
 
           <div className="agendamentos__field">
-            <label htmlFor="telefone">Telefone</label>
+            <label className="agendamentos__label" htmlFor="telefone">
+              Telefone
+
+              <Tooltip texto="Informe apenas números. O campo aceita até 9 dígitos." />
+            </label>
 
             <input
               id="telefone"
@@ -189,7 +195,11 @@ function Agendamentos() {
           </div>
 
           <div className="agendamentos__field">
-            <label htmlFor="horario">Horário</label>
+            <label className="agendamentos__label" htmlFor="horario">
+              Horário
+
+              <Tooltip texto="Escolha um horário disponível para atendimento na clínica." />
+            </label>
 
             <input
               id="horario"

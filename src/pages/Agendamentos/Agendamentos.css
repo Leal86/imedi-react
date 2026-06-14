@@ -186,6 +186,12 @@
   opacity: 0.92;
 }
 
+.agendamentos__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 @media (max-width: 768px) {
   .agendamentos__form {
     grid-template-columns: 1fr;
