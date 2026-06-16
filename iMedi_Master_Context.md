@@ -260,6 +260,8 @@ Exemplo:
 * Adicionar exportação PDF e Excel.
 * Cards com atualização em tempo real.
 * Integração com indicadores do backend.
+* Pesquisa de pacientes pela barra superior.
+* Busca unificada de especialidades e pacientes.
 
 ---
 
@@ -433,13 +435,14 @@ Concluído:
 * Dashboard refatorado para consumir Mock Data com useState e useEffect
 * Especialidades refatorada para consumir Mock Data com useState e useEffect
 * Simulação de carregamento de dados preparada para futura API
+* Consumo de Mock Data através de estados React
 
 Próxima etapa:
 
 * Preparar README final
+* Publicação do projeto no GitHub
 * Revisão final do MVP
 * Preparar vídeo de apresentação
-* Publicação do projeto no GitHub
 ---
 
 # Histórico de Commits
@@ -474,9 +477,9 @@ Os commits 8 e 9 possuem a mesma mensagem no histórico Git. Ambos foram mantido
 
 # Progresso do MVP
 
-Percentual estimado de implementação:
-
-97%
+Implementação: 100%
+Documentação: 98%
+Entrega final: 97%
 
 Requisitos já atendidos:
 
@@ -493,8 +496,6 @@ Requisitos já atendidos:
 * Componentes reutilizáveis
 * Layout visual diferenciado
 * Mensagens condicionais
-* useState
-* useEffect
 * Página 404
 * Tooltip de ajuda contextual
 * Feedback visual de sucesso

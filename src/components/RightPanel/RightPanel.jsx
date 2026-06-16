@@ -1,5 +1,7 @@
 import './RightPanel.css'
 
+import { useNavigate } from 'react-router-dom'
+
 function RightPanel({
   nome,
   cargo,
@@ -7,6 +9,16 @@ function RightPanel({
   especialidades,
   pendentes,
 }) {
+  const navigate = useNavigate()
+
+  function handleNovaConsulta() {
+    navigate('/especialidades')
+  }
+
+  function handleVerAgenda() {
+    navigate('/agendamentos')
+  }
+
   return (
     <div className="right-panel">
       <section className="right-panel__card">
@@ -34,11 +46,19 @@ function RightPanel({
       <section className="right-panel__card">
         <h3>Ações Rápidas</h3>
 
-        <button className="right-panel__button">
+        <button
+          className="right-panel__button"
+          type="button"
+          onClick={handleNovaConsulta}
+        >
           Nova Consulta
         </button>
 
-        <button className="right-panel__button">
+        <button
+          className="right-panel__button"
+          type="button"
+          onClick={handleVerAgenda}
+        >
           Ver Agenda
         </button>
       </section>

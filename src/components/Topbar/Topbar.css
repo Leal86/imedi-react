@@ -105,6 +105,31 @@
   color: var(--color-primary);
 }
 
+.topbar__search {
+  position: relative;
+}
+
+.topbar__search-error {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+
+  padding: 8px 12px;
+
+  border-radius: var(--radius-md);
+
+  background-color: #fee2e2;
+  color: #991b1b;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: var(--shadow-card);
+  white-space: nowrap;
+
+  z-index: 20;
+}
+
 /* ==========================
    Tablet
 ========================== */
