@@ -365,7 +365,6 @@ Exemplo:
 * Área completa do paciente.
 * Área completa de médicos.
 * Mensagens.
-* Prontuário eletrônico.
 * Relatórios administrativos avançados.
 
 ---
@@ -430,6 +429,7 @@ Concluído:
 * Especialidades responsiva
 * Agendamentos responsiva
 * Testes manuais de responsividade concluídos
+* Navegação ativa com NavLink
 
 Próxima etapa:
 
@@ -449,18 +449,22 @@ Próxima etapa:
 6. Documenta contexto atual do projeto iMedi
 7. Cria pagina de especialidades com cards dinamicos
 8. Conecta especialidades ao fluxo de agendamento
-9. Atualiza documentacao do projeto iMedi
-10. Atualiza documentação do contexto do projeto
-11. Cria pagina 404 para rotas inexistentes
-12. Adiciona useEffect ao feedback de agendamento
-13. Atualiza documentacao do contexto do projeto
-14. Adiciona tooltip de ajuda no formulario
-15. Ajusta documentacao do contexto do projeto
-16. Ajusta responsividade do dashboard em 425px
-17. Finaliza responsividade mobile do MVP
+9. Conecta especialidades ao fluxo de agendamento
+10. Atualiza documentacao do contexto do projeto
+11. Melhora formulario de agendamento
+12. Atualiza documentacao do contexto do projeto
+13. Cria pagina 404 para rotas inexistentes
+14. Atualiza documentacao do contexto do projeto
+15. Adiciona useEffect ao feedback de agendamento
+16. Atualiza documentacao do contexto do projeto
+17. Adiciona tooltip de ajuda no formulario
+18. Ajusta documentacao do contexto do projeto
+19. Ajusta responsividade do dashboard em 425px
+20. Finaliza responsividade mobile do MVP
+21. Atualiza documentacao final da Sprint 2
 
 Observação:
-O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do commit 8 no Git. Nos próximos commits, commits funcionais e commits de documentação devem ter mensagens diferentes.
+Os commits 8 e 9 possuem a mesma mensagem no histórico Git. Ambos foram mantidos na documentação para preservar a sequência real do desenvolvimento.
 
 ---
 
@@ -468,7 +472,7 @@ O commit 9 atualizou documentação, mas foi registrado com a mesma mensagem do 
 
 Percentual estimado de implementação:
 
-95%
+97%
 
 Requisitos já atendidos:
 
