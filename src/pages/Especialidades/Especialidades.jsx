@@ -1,10 +1,18 @@
 import './Especialidades.css'
 
+import { useEffect, useState } from 'react'
+
 import EspecialidadeCard from '../../components/EspecialidadeCard/EspecialidadeCard'
 
 import { especialidades } from '../../data/especialidadesData'
 
 function Especialidades() {
+  const [listaEspecialidades, setListaEspecialidades] = useState([])
+
+  useEffect(() => {
+    setListaEspecialidades(especialidades)
+  }, [])
+
   return (
     <section className="especialidades">
       <div className="especialidades__header">
@@ -16,7 +24,7 @@ function Especialidades() {
       </div>
 
       <div className="especialidades__grid">
-        {especialidades.map((especialidade) => (
+        {listaEspecialidades.map((especialidade) => (
           <EspecialidadeCard
             key={especialidade.id}
             id={especialidade.id}
