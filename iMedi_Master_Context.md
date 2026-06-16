@@ -260,8 +260,7 @@ Exemplo:
 * Adicionar exportação PDF e Excel.
 * Cards com atualização em tempo real.
 * Integração com indicadores do backend.
-* Pesquisa de pacientes pela barra superior.
-* Busca unificada de especialidades e pacientes.
+
 
 ---
 
@@ -299,6 +298,8 @@ Exemplo:
 * Histórico médico.
 * Informações de contato.
 * Pesquisa avançada.
+* Pesquisa de pacientes pela barra superior.
+* Busca unificada de especialidades e pacientes.
 * Documentos anexados.
 
 ---
@@ -436,6 +437,12 @@ Concluído:
 * Especialidades refatorada para consumir Mock Data com useState e useEffect
 * Simulação de carregamento de dados preparada para futura API
 * Consumo de Mock Data através de estados React
+* Busca funcional de especialidades na Topbar
+* Busca ignorando acentos e maiúsculas/minúsculas
+* Mensagem temporária para especialidade não encontrada
+* Ações rápidas funcionais no RightPanel
+* Navegação para Nova Consulta a partir das ações rápidas
+* Navegação para Agenda a partir das ações rápidas
 
 Próxima etapa:
 
@@ -468,7 +475,10 @@ Próxima etapa:
 19. Ajusta responsividade do dashboard em 425px
 20. Finaliza responsividade mobile do MVP
 21. Atualiza documentacao final da Sprint 2
-22. Refatora consumo de dados com useState e useEffect
+22. Refina documentacao final da Sprint 2
+23. Refatora consumo de dados com useState e useEffect
+24. Atualiza documentacao do consumo de dados
+25. Implementa busca de especialidades e ações rápidas
 
 Observação:
 Os commits 8 e 9 possuem a mesma mensagem no histórico Git. Ambos foram mantidos na documentação para preservar a sequência real do desenvolvimento.
@@ -503,6 +513,8 @@ Requisitos já atendidos:
 * useState para controle de dados e formulário
 * useEffect para simulação de carregamento de dados
 * Fluxo de dados simulados semelhante a uma futura API
+* Busca funcional de especialidades
+* Ações rápidas funcionais
 
 Requisitos pendentes:
 
