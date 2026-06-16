@@ -479,6 +479,7 @@ Próxima etapa:
 23. Refatora consumo de dados com useState e useEffect
 24. Atualiza documentacao do consumo de dados
 25. Implementa busca de especialidades e ações rápidas
+26. Atualiza documentacao da busca e acoes rapidas
 
 Observação:
 Os commits 8 e 9 possuem a mesma mensagem no histórico Git. Ambos foram mantidos na documentação para preservar a sequência real do desenvolvimento.
