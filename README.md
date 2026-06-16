@@ -1,5 +1,9 @@
 # 🏥 iMedi
 
+Sistema de agendamento de consultas médicas desenvolvido como MVP da disciplina **Desenvolvimento Front-End Avançado** da Pós-Graduação Full Stack.
+
+O projeto foi construído utilizando React e tem como objetivo oferecer uma interface moderna, intuitiva e responsiva para recepcionistas e atendentes realizarem o gerenciamento inicial de consultas médicas.
+
 ## 📸 Capturas de Tela
 
 ### Dashboard
@@ -14,9 +18,6 @@
 
 ![Agendamentos](docs/images/agendamentos.png)
 
-Sistema de agendamento de consultas médicas desenvolvido como MVP da disciplina **Desenvolvimento Front-End Avançado** da Pós-Graduação Full Stack.
-
-O projeto foi construído utilizando React e tem como objetivo oferecer uma interface moderna, intuitiva e responsiva para recepcionistas e atendentes realizarem o gerenciamento inicial de consultas médicas.
 
 ---
 
@@ -245,7 +246,7 @@ Essa abordagem facilita futuras integrações com APIs REST e backend em Spring 
 Clone o repositório:
 
 ```bash
-git clone <URL_DO_REPOSITORIO>
+git clone https://github.com/Leal86/imedi-react.git
 ```
 
 Acesse a pasta do projeto:

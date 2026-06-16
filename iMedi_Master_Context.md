@@ -443,12 +443,15 @@ Concluído:
 * Ações rápidas funcionais no RightPanel
 * Navegação para Nova Consulta a partir das ações rápidas
 * Navegação para Agenda a partir das ações rápidas
+* README final criado
+* Imagens do projeto adicionadas ao README
+* Favicon personalizado do projeto
 
 Próxima etapa:
 
-* Preparar README final
+* Compilar o projeto com npm run build
 * Publicação do projeto no GitHub
-* Revisão final do MVP
+* Revisão final do MVP publicado
 * Preparar vídeo de apresentação
 ---
 
@@ -480,6 +483,9 @@ Próxima etapa:
 24. Atualiza documentacao do consumo de dados
 25. Implementa busca de especialidades e ações rápidas
 26. Atualiza documentacao da busca e acoes rapidas
+27. Refina documentacao final do MVP
+28. Adiciona README e imagens do projeto
+29. Personaliza favicon do projeto
 
 Observação:
 Os commits 8 e 9 possuem a mesma mensagem no histórico Git. Ambos foram mantidos na documentação para preservar a sequência real do desenvolvimento.
@@ -489,8 +495,8 @@ Os commits 8 e 9 possuem a mesma mensagem no histórico Git. Ambos foram mantido
 # Progresso do MVP
 
 Implementação: 100%
-Documentação: 98%
-Entrega final: 97%
+Documentação: 100%
+Entrega final: 98%
 
 Requisitos já atendidos:
 
@@ -519,7 +525,6 @@ Requisitos já atendidos:
 
 Requisitos pendentes:
 
-* README final
 * GitHub público
 * Vídeo de apresentação
-* Revisão final do MVP
+* Revisão final do MVP publicado
