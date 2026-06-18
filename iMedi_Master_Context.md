@@ -446,13 +446,14 @@ Concluído:
 * README final criado
 * Imagens do projeto adicionadas ao README
 * Favicon personalizado do projeto
-
-Próxima etapa:
-
 * Compilar o projeto com npm run build
 * Publicação do projeto no GitHub
 * Revisão final do MVP publicado
+
+Próxima etapa:
+
 * Preparar vídeo de apresentação
+
 ---
 
 # Histórico de Commits
