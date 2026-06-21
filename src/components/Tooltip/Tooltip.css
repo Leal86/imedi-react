@@ -17,12 +17,19 @@
   font-weight: 700;
 
   cursor: help;
+  user-select: none;
+}
+
+.tooltip:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 .tooltip__text {
   position: absolute;
-  bottom: 130%;
-  left: 50%;
+
+  top: 50%;
+  left: calc(100% + 12px);
 
   width: 220px;
   padding: 10px 12px;
@@ -39,13 +46,41 @@
   opacity: 0;
   visibility: hidden;
 
-  transform: translateX(-50%);
+  transform: translateY(-50%);
 
   transition: opacity 0.2s ease;
-  z-index: 10;
+  z-index: 100;
 }
 
-.tooltip:hover .tooltip__text {
+.tooltip:hover .tooltip__text,
+.tooltip:focus .tooltip__text,
+.tooltip__text--visible {
   opacity: 1;
   visibility: visible;
+}
+
+/* MOBILE PEQUENO */
+
+@media (max-width: 425px) {
+  .agendamentos__field--with-tooltip {
+    position: relative;
+  }
+
+  .agendamentos__field--with-tooltip .tooltip {
+    position: static;
+  }
+
+  .agendamentos__field--with-tooltip .tooltip__text {
+    position: absolute;
+
+    top: auto;
+    bottom: calc(100% + 10px);
+
+    left: 50%;
+
+    width: 240px;
+    max-width: calc(100% - 24px);
+
+    transform: translateX(-50%);
+  }
 }

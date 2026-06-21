@@ -18,7 +18,6 @@ O projeto foi construído utilizando React e tem como objetivo oferecer uma inte
 
 ![Agendamentos](docs/images/agendamentos.png)
 
-
 ---
 
 ## 📌 Objetivo
@@ -35,18 +34,23 @@ O iMedi foi desenvolvido para simplificar o processo de agendamento de consultas
 * Quantidade de pendências
 * Quantidade de especialidades disponíveis
 * Tabela de próximos agendamentos
+* Carregamento dos dados a partir de arquivos JSON
+* Tratamento de erro no carregamento das informações
 
 ### Especialidades
 
 * Listagem dinâmica de especialidades médicas
 * Cards reutilizáveis
 * Navegação para página de detalhes
+* Carregamento das especialidades a partir de JSON
+* Feedback de carregamento e erro
 
 ### Detalhes da Especialidade
 
 * Exibição de informações detalhadas
 * Navegação para agendamento
 * Utilização de parâmetros dinâmicos na URL
+* Tratamento para especialidade não encontrada
 
 ### Agendamentos
 
@@ -55,19 +59,26 @@ O iMedi foi desenvolvido para simplificar o processo de agendamento de consultas
 * Feedback visual de sucesso
 * Limpeza automática do formulário
 * Ações rápidas após confirmação
+* Registro de consultas agendadas
+* Persistência dos agendamentos no localStorage
 
 ### Busca
 
 * Busca por especialidades médicas
 * Pesquisa sem diferenciação de acentos
 * Mensagem de especialidade não encontrada
+* Carregamento dos dados de busca a partir de JSON
 
 ### Usabilidade
 
 * Tooltip de ajuda contextual
+* Tooltip compatível com clique, foco e hover
 * Feedback visual para ações do usuário
+* Mensagens de carregamento
+* Mensagens de erro
 * Página 404 personalizada
 * Interface responsiva
+* Melhorias básicas de acessibilidade com `aria-label`, `role="status"` e `role="alert"`
 
 ---
 
@@ -79,6 +90,8 @@ O iMedi foi desenvolvido para simplificar o processo de agendamento de consultas
 * CSS3
 * React Router DOM
 * React Icons
+* JSON
+* localStorage
 
 ---
 
@@ -105,15 +118,19 @@ Principais componentes:
 Utilizado para:
 
 * Controle de formulários
-* Controle de dados simulados
+* Controle de dados carregados
 * Controle de mensagens e feedbacks
+* Controle dos agendamentos salvos
+* Controle de abertura do Tooltip
 
 ### useEffect
 
 Utilizado para:
 
-* Simulação de carregamento de dados
+* Carregamento de dados JSON
 * Controle de mensagens temporárias
+* Persistência e recuperação de dados no localStorage
+* Fechamento do Tooltip ao clicar fora do componente
 
 ### useNavigate
 
@@ -127,11 +144,22 @@ Utilizado para envio e recebimento de dados durante a navegação.
 
 Utilizado para captura de parâmetros da URL.
 
+### useRef
+
+Utilizado no componente Tooltip para detectar cliques fora do elemento.
+
 ---
 
 ## 🗂 Estrutura do Projeto
 
 ```text
+public
+│
+└── data
+    ├── agendamentosData.json
+    ├── dashboardData.json
+    └── especialidadesData.json
+
 src
 │
 ├── assets
@@ -143,11 +171,6 @@ src
 │   ├── Sidebar
 │   ├── Tooltip
 │   └── Topbar
-│
-├── data
-│   ├── agendamentosData.js
-│   ├── dashboardData.js
-│   └── especialidadesData.js
 │
 ├── pages
 │   ├── Dashboard
@@ -190,23 +213,37 @@ Foram realizados ajustes específicos para:
 * Dashboard
 * Especialidades
 * Agendamentos
+* Tooltip
 
 ---
 
 ## 🔄 Simulação de API
 
-Os dados utilizados no MVP são simulados através de arquivos JavaScript localizados na pasta:
+Os dados utilizados no MVP são simulados através de arquivos JSON reais localizados na pasta:
 
 ```text
-src/data
+public/data
 ```
 
 O consumo dos dados é realizado utilizando:
 
+* fetch
 * useState
 * useEffect
 
-Essa abordagem facilita futuras integrações com APIs REST e backend em Spring Boot.
+Essa abordagem atende ao requisito de simulação de requisições através da leitura de JSON e facilita futuras integrações com APIs REST e backend em Spring Boot.
+
+---
+
+## 💾 Persistência Local
+
+A página de agendamentos utiliza `localStorage` para armazenar temporariamente as consultas criadas pelo usuário.
+
+Essa implementação permite:
+
+* Registrar novos agendamentos
+* Listar consultas agendadas
+* Manter os dados mesmo após recarregar a página
 
 ---
 
@@ -265,6 +302,18 @@ Execute o projeto:
 
 ```bash
 npm run dev
+```
+
+Para gerar a versão de produção:
+
+```bash
+npm run build
+```
+
+Para visualizar a versão de produção localmente:
+
+```bash
+npm run preview
 ```
 
 ---

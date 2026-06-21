@@ -1,15 +1,40 @@
 import './RightPanel.css'
 
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function RightPanel({
-  nome,
-  cargo,
-  consultasHoje,
-  especialidades,
-  pendentes,
+  nome = 'Usuário',
+  cargo = 'Não informado',
 }) {
   const navigate = useNavigate()
+
+  const [resumo, setResumo] = useState({
+    consultasHoje: 0,
+    especialidades: 0,
+    pendentes: 0,
+  })
+
+  const [loading, setLoading] = useState(true)
+  const [erro, setErro] = useState(false)
+
+  useEffect(() => {
+    async function carregarResumo() {
+      try {
+        const response = await fetch('/data/dashboardData.json')
+        const data = await response.json()
+
+        setResumo(data)
+      } catch (error) {
+        console.error('Erro ao carregar resumo:', error)
+        setErro(true)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    carregarResumo()
+  }, [])
 
   function handleNovaConsulta() {
     navigate('/especialidades')
@@ -20,7 +45,10 @@ function RightPanel({
   }
 
   return (
-    <div className="right-panel">
+    <aside
+      className="right-panel"
+      aria-label="Painel lateral de informações"
+    >
       <section className="right-panel__card">
         <h3>Usuário</h3>
 
@@ -36,11 +64,30 @@ function RightPanel({
       <section className="right-panel__card">
         <h3>Resumo</h3>
 
-        <p>Consultas Hoje: {consultasHoje}</p>
+        {loading ? (
+          <p role="status">Carregando resumo...</p>
+        ) : erro ? (
+          <p role="alert">
+            Não foi possível carregar o resumo.
+          </p>
+        ) : (
+          <>
+            <p>
+              Consultas Hoje:{' '}
+              <strong>{resumo.consultasHoje}</strong>
+            </p>
 
-        <p>Especialidades: {especialidades}</p>
+            <p>
+              Especialidades:{' '}
+              <strong>{resumo.especialidades}</strong>
+            </p>
 
-        <p>Pendentes: {pendentes}</p>
+            <p>
+              Pendentes:{' '}
+              <strong>{resumo.pendentes}</strong>
+            </p>
+          </>
+        )}
       </section>
 
       <section className="right-panel__card">
@@ -49,6 +96,7 @@ function RightPanel({
         <button
           className="right-panel__button"
           type="button"
+          aria-label="Criar nova consulta"
           onClick={handleNovaConsulta}
         >
           Nova Consulta
@@ -57,12 +105,13 @@ function RightPanel({
         <button
           className="right-panel__button"
           type="button"
+          aria-label="Visualizar agenda"
           onClick={handleVerAgenda}
         >
           Ver Agenda
         </button>
       </section>
-    </div>
+    </aside>
   )
 }
 

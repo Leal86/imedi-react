@@ -4,22 +4,48 @@ import { useEffect, useState } from 'react'
 
 import Card from '../../components/Card/Card'
 
-import { dashboardResumo } from '../../data/dashboardData'
-import { proximosAgendamentos } from '../../data/agendamentosData'
-
 function Dashboard() {
   const [resumo, setResumo] = useState(null)
   const [agendamentos, setAgendamentos] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [erro, setErro] = useState(false)
 
   useEffect(() => {
-    setResumo(dashboardResumo)
-    setAgendamentos(proximosAgendamentos)
+    async function carregarDados() {
+      try {
+        const resumoResponse = await fetch('/data/dashboardData.json')
+        const resumoData = await resumoResponse.json()
+
+        const agendamentosResponse = await fetch('/data/agendamentosData.json')
+        const agendamentosData = await agendamentosResponse.json()
+
+        setResumo(resumoData)
+        setAgendamentos(agendamentosData)
+      } catch (error) {
+        console.error('Erro ao carregar dados:', error)
+        setErro(true)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    carregarDados()
   }, [])
 
-  if (!resumo) {
+  if (loading) {
     return (
       <section className="dashboard">
-        <p>Carregando dados do dashboard...</p>
+        <p role="status">Carregando dados do dashboard...</p>
+      </section>
+    )
+  }
+
+  if (erro || !resumo) {
+    return (
+      <section className="dashboard">
+        <p role="alert">
+          Não foi possível carregar os dados do dashboard.
+        </p>
       </section>
     )
   }

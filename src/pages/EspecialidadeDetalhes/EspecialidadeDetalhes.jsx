@@ -1,17 +1,69 @@
 import './EspecialidadeDetalhes.css'
 
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-
-import { especialidades } from '../../data/especialidadesData'
 
 function EspecialidadeDetalhes() {
   const { id } = useParams()
 
   const navigate = useNavigate()
 
-  const especialidade = especialidades.find(
-    (item) => item.id === Number(id),
-  )
+  const [especialidade, setEspecialidade] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [erro, setErro] = useState(false)
+
+  useEffect(() => {
+    async function carregarEspecialidade() {
+      try {
+        const response = await fetch(
+          '/data/especialidadesData.json',
+        )
+
+        const data = await response.json()
+
+        const encontrada = data.find(
+          (item) => item.id === Number(id),
+        )
+
+        setEspecialidade(encontrada)
+      } catch (error) {
+        console.error('Erro ao carregar especialidade:', error)
+        setErro(true)
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    carregarEspecialidade()
+  }, [id])
+
+  if (loading) {
+    return (
+      <section className="especialidade-detalhes">
+        <div className="especialidade-detalhes__card">
+          <p role="status">Carregando especialidade...</p>
+        </div>
+      </section>
+    )
+  }
+
+  if (erro) {
+    return (
+      <section className="especialidade-detalhes">
+        <div className="especialidade-detalhes__card">
+          <h1>Erro ao carregar dados</h1>
+
+          <p role="alert">
+            Não foi possível carregar os dados da especialidade.
+          </p>
+
+          <button onClick={() => navigate('/especialidades')}>
+            Voltar para especialidades
+          </button>
+        </div>
+      </section>
+    )
+  }
 
   if (!especialidade) {
     return (

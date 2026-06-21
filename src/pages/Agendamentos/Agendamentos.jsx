@@ -10,6 +10,7 @@ function Agendamentos() {
   const navigate = useNavigate()
 
   const especialidadeSelecionada = location.state?.especialidade
+  const formularioBloqueado = !especialidadeSelecionada
 
   const [formulario, setFormulario] = useState({
     paciente: '',
@@ -20,20 +21,45 @@ function Agendamentos() {
   })
 
   const [mensagemSucesso, setMensagemSucesso] = useState('')
+  const [mensagemErro, setMensagemErro] = useState('')
+  const [agendamentos, setAgendamentos] = useState([])
+  const [carregouStorage, setCarregouStorage] = useState(false)
 
   useEffect(() => {
-    if (!mensagemSucesso) {
+    const dadosSalvos = localStorage.getItem('imedi-agendamentos')
+
+    if (dadosSalvos) {
+      setAgendamentos(JSON.parse(dadosSalvos))
+    }
+
+    setCarregouStorage(true)
+  }, [])
+
+  useEffect(() => {
+    if (!carregouStorage) {
+      return
+    }
+
+    localStorage.setItem(
+      'imedi-agendamentos',
+      JSON.stringify(agendamentos),
+    )
+  }, [agendamentos, carregouStorage])
+
+  useEffect(() => {
+    if (!mensagemSucesso && !mensagemErro) {
       return
     }
 
     const timer = setTimeout(() => {
       setMensagemSucesso('')
-    }, 3000)
+      setMensagemErro('')
+    }, 4000)
 
     return () => {
       clearTimeout(timer)
     }
-  }, [mensagemSucesso])
+  }, [mensagemSucesso, mensagemErro])
 
   function handleChange(event) {
     const { name, value } = event.target
@@ -59,6 +85,30 @@ function Agendamentos() {
   function handleSubmit(event) {
     event.preventDefault()
 
+    if (!especialidadeSelecionada) {
+      setMensagemSucesso('')
+      setMensagemErro(
+        'Escolha uma especialidade antes de preencher e confirmar o agendamento.',
+      )
+      return
+    }
+
+    const novoAgendamento = {
+      id: Date.now(),
+      paciente: formulario.paciente,
+      telefone: formulario.telefone,
+      data: formulario.data,
+      horario: formulario.horario,
+      observacoes: formulario.observacoes,
+      especialidade: especialidadeSelecionada.nome,
+    }
+
+    setAgendamentos((estadoAtual) => [
+      novoAgendamento,
+      ...estadoAtual,
+    ])
+
+    setMensagemErro('')
     setMensagemSucesso(
       `Agendamento de ${formulario.paciente} confirmado com sucesso.`,
     )
@@ -74,6 +124,7 @@ function Agendamentos() {
 
   function handleAgendarNovaConsulta() {
     setMensagemSucesso('')
+    setMensagemErro('')
 
     setFormulario({
       paciente: '',
@@ -110,7 +161,8 @@ function Agendamentos() {
             </strong>
 
             <span>
-              Valor da consulta: € {especialidadeSelecionada.valor}
+              Valor da consulta: €{' '}
+              {especialidadeSelecionada.valor}
             </span>
           </div>
         ) : (
@@ -120,13 +172,33 @@ function Agendamentos() {
             </p>
 
             <span>
-              Volte para a página de especialidades e escolha uma opção.
+              Escolha uma especialidade antes de preencher o formulário de agendamento.
             </span>
+
+            <button
+              className="agendamentos__button"
+              type="button"
+              onClick={handleVerEspecialidades}
+            >
+              Escolher especialidade
+            </button>
+          </div>
+        )}
+
+        {mensagemErro && (
+          <div
+            className="agendamentos__empty"
+            role="alert"
+          >
+            <p>{mensagemErro}</p>
           </div>
         )}
 
         {mensagemSucesso && (
-          <div className="agendamentos__success">
+          <div
+            className="agendamentos__success"
+            role="alert"
+          >
             <p>{mensagemSucesso}</p>
 
             <div className="agendamentos__success-actions">
@@ -147,9 +219,15 @@ function Agendamentos() {
           </div>
         )}
 
-        <form className="agendamentos__form" onSubmit={handleSubmit}>
+        <form
+          className="agendamentos__form"
+          onSubmit={handleSubmit}
+          aria-disabled={formularioBloqueado}
+        >
           <div className="agendamentos__field">
-            <label htmlFor="paciente">Nome do paciente</label>
+            <label htmlFor="paciente">
+              Nome do paciente
+            </label>
 
             <input
               id="paciente"
@@ -158,12 +236,16 @@ function Agendamentos() {
               placeholder="Ex: Maria Silva"
               value={formulario.paciente}
               onChange={handleChange}
+              disabled={formularioBloqueado}
               required
             />
           </div>
 
-          <div className="agendamentos__field">
-            <label className="agendamentos__label" htmlFor="telefone">
+          <div className="agendamentos__field agendamentos__field--with-tooltip">
+            <label
+              className="agendamentos__label"
+              htmlFor="telefone"
+            >
               Telefone
 
               <Tooltip texto="Informe apenas números. O campo aceita até 9 dígitos." />
@@ -177,6 +259,7 @@ function Agendamentos() {
               placeholder="Ex: 912345678"
               value={formulario.telefone}
               onChange={handleChange}
+              disabled={formularioBloqueado}
               required
             />
           </div>
@@ -190,12 +273,16 @@ function Agendamentos() {
               type="date"
               value={formulario.data}
               onChange={handleChange}
+              disabled={formularioBloqueado}
               required
             />
           </div>
 
-          <div className="agendamentos__field">
-            <label className="agendamentos__label" htmlFor="horario">
+          <div className="agendamentos__field agendamentos__field--with-tooltip">
+            <label
+              className="agendamentos__label"
+              htmlFor="horario"
+            >
               Horário
 
               <Tooltip texto="Escolha um horário disponível para atendimento na clínica." />
@@ -207,12 +294,15 @@ function Agendamentos() {
               type="time"
               value={formulario.horario}
               onChange={handleChange}
+              disabled={formularioBloqueado}
               required
             />
           </div>
 
           <div className="agendamentos__field agendamentos__field--full">
-            <label htmlFor="observacoes">Observações</label>
+            <label htmlFor="observacoes">
+              Observações
+            </label>
 
             <textarea
               id="observacoes"
@@ -220,14 +310,53 @@ function Agendamentos() {
               placeholder="Informe detalhes importantes para a consulta."
               value={formulario.observacoes}
               onChange={handleChange}
+              disabled={formularioBloqueado}
               rows="4"
             />
           </div>
 
-          <button className="agendamentos__button" type="submit">
+          <button
+            className="agendamentos__button"
+            type="submit"
+            disabled={formularioBloqueado}
+          >
             Confirmar Agendamento
           </button>
         </form>
+      </div>
+
+      <div className="agendamentos__card">
+        <h2>Consultas Agendadas</h2>
+
+        {agendamentos.length === 0 ? (
+          <p>
+            Nenhuma consulta foi agendada até o momento.
+          </p>
+        ) : (
+          agendamentos.map((agendamento) => (
+            <div
+              key={agendamento.id}
+              className="agendamentos__selected"
+            >
+              <strong>
+                {agendamento.paciente}
+              </strong>
+
+              <span>
+                Especialidade:{' '}
+                {agendamento.especialidade}
+              </span>
+
+              <span>
+                Data: {agendamento.data}
+              </span>
+
+              <span>
+                Horário: {agendamento.horario}
+              </span>
+            </div>
+          ))
+        )}
       </div>
     </section>
   )
